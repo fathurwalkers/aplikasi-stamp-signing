@@ -12,12 +12,34 @@ use Illuminate\Support\{
 use App\Models\{
     Login,
 };
+use GuzzleHttp\Client;
 
 class BackController extends Controller
 {
     public function index()
     {
-        return view('dashboard.index');
+        $client = new Client;
+
+        $url = 'https://backendservicedev.scm.perurica.co.id/api/users/login';
+        $username = 'ekokapitalsekuritas_emet@yopmail.com';
+        $password = 'Ekokapitalsek123!';
+
+        $params = [
+            'user' => $username,
+            'password' => $password
+        ];
+
+        $response = $client->request('POST', $url, [
+            'json' => $params
+        ]);
+
+        $data = json_decode($response->getBody());
+
+        dd($data->token);
+        die;
+        return view('dashboard.index', [
+            'response' => $response
+        ]);
     }
 
     public function login()

@@ -48,6 +48,13 @@
                 <li class="">
                     <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i>
                         <span>
+                            Cek Saldo
+                        </span>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i>
+                        <span>
                             System Configuration
                         </span>
                     </a>
