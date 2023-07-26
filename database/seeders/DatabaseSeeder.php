@@ -69,15 +69,15 @@ class DatabaseSeeder extends Seeder
         // ADMIN
         $token = Str::random(16);
         $role = "admin";
-        $hashPassword = Hash::make('jancok', [
+        $hashPassword = Hash::make('12345', [
             'rounds' => 12,
         ]);
         $hashToken = Hash::make($token, [
             'rounds' => 12,
         ]);
         Login::create([
-            'login_nama' => 'Syarah',
-            'login_username' => 'syarah',
+            'login_nama' => 'Welly',
+            'login_username' => 'welly',
             'login_password' => $hashPassword,
             'login_email' => 'syaral@flask.com',
             'login_telepon' => '08554929239',
@@ -157,107 +157,5 @@ class DatabaseSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
-
-        Anggaran::create([
-            'anggaran_nama' => 'KAS RUKUN KEMATIAN DAN SOSIAL',
-            'anggaran_tipe' => 'PENERIMAAN',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        Anggaran::create([
-            'anggaran_nama' => 'KAS RUKUN KEMATIAN DAN SOSIAL',
-            'anggaran_tipe' => 'PENGELUARAN',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        Anggaran::create([
-            'anggaran_nama' => 'KAS PEMBANGUNAN LINGKUNGAN TAHUN 2021',
-            'anggaran_tipe' => 'PENERIMAAN',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        Anggaran::create([
-            'anggaran_nama' => 'KAS PEMBANGUNAN LINGKUNGAN TAHUN 2021',
-            'anggaran_tipe' => 'PENGELUARAN',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        Anggaran::create([
-            'anggaran_nama' => 'KAS HUT KEMERDEKAAN RI TAHUN 2021',
-            'anggaran_tipe' => 'PENERIMAAN',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        Anggaran::create([
-            'anggaran_nama' => 'KAS HUT KEMERDEKAAN RI TAHUN 2021',
-            'anggaran_tipe' => 'PENGELUARAN',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        $anggaran = Anggaran::all();
-
-        $deskripsi = [
-            'Saldo kas awal',
-            'Iuran bulan Januari',
-            'Iuran bulan Februari',
-            'Iuran bulan Maret',
-            'Iuran bulan April',
-            'Iuran bulan Mei',
-            'Iuran bulan Juni',
-            'Iuran bulan Juli',
-            'Iuran bulan Agustus',
-            'Iuran bulan September',
-            'Iuran bulan Oktober',
-            'Iuran bulan November',
-            'Iuran bulan Desember',
-            'Bantuan Sosial Warga yg Sakit',
-            'Bantuan Sosial Warga Kurang Mampu'
-        ];
-
-        foreach ($anggaran as $ang) {
-            foreach ($deskripsi as $desk) {
-                $anggaran_tanggal = $faker->dateTimeBetween('-1 years');
-                switch ($ang->anggaran_tipe) {
-                    case 'PENERIMAAN':
-                        $randomDigit = $faker->numberBetween(5,9);
-                        $penerimaan = $faker->randomNumber($randomDigit);
-                        $pengeluaran = NULL;
-                        $data_anggaran = new Dataanggaran;
-                        $save_data_anggaran = $data_anggaran->create([
-                            'data_anggaran_deskripsi' => $desk,
-                            'data_anggaran_debet' => $penerimaan,
-                            'data_anggaran_kredit' => $pengeluaran,
-                            'data_anggaran_tanggal' => $anggaran_tanggal,
-                            'anggaran_id' => $ang->id,
-                            'created_at' => now(),
-                            'updated_at' => now()
-                        ]);
-                        $save_data_anggaran->save();
-                        break;
-                    case 'PENGELUARAN':
-                        $randomDigit = $faker->numberBetween(5,9);
-                        $pengeluaran = $faker->randomNumber($randomDigit);
-                        $penerimaan = NULL;
-                        $data_anggaran = new Dataanggaran;
-                        $save_data_anggaran = $data_anggaran->create([
-                            'data_anggaran_deskripsi' => $desk,
-                            'data_anggaran_debet' => $penerimaan,
-                            'data_anggaran_kredit' => $pengeluaran,
-                            'data_anggaran_tanggal' => $anggaran_tanggal,
-                            'anggaran_id' => $ang->id,
-                            'created_at' => now(),
-                            'updated_at' => now()
-                        ]);
-                        $save_data_anggaran->save();
-                        break;
-                }
-            }
-        }
     }
 }
