@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BackController;
+use App\Http\Controllers\{
+    BackController,
+    BulkstampController,
+};
 
 // Route untuk Halaman Login
 Route::get('/login', [BackController::class, 'login'])->name('login');
@@ -19,5 +22,13 @@ Route::post('/logout', [BackController::class, 'logout'])->name('logout');
 Route::get('/', fn () => redirect()->route('dashboard'));
 
 Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function () {
+
+    // Dashboard Route
     Route::get('/', [BackController::class, 'index'])->name('dashboard');
+
+    // Bulk Stamp Route
+    Route::group(['prefix' => '/bulk-stamp'], function () {
+        Route::get('/', [BulkstampController::class, 'index'])->name('bulk-stamp');
+    });
 });
+

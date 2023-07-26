@@ -13,7 +13,7 @@
                     class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                     <img alt="image" src="{{ asset('assets/stisla/assets') }}/img/avatar/avatar-1.png"
                         class="rounded-circle mr-1">
-                    <div class="d-sm-none d-lg-inline-block">MAMANG</div>
+                    <div class="d-sm-none d-lg-inline-block">{{ $users->login_nama }}</div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <form action="{{ route('logout') }}" method="POST">

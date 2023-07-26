@@ -3,8 +3,10 @@
 @section('header-content', 'Login')
 
 @section('main-content')
+    <br />
+    <br />
     <div class="card fat">
-        <div class="card-body">
+        <div class="card-body mb-4">
             <h4 class="card-title">Login</h4>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
@@ -29,9 +31,9 @@
 
                 <div class="form-group">
                     <label for="login_password">Password
-                        <a href="forgot.html" class="float-right">
+                        {{-- <a href="forgot.html" class="float-right">
                             Forgot Password?
-                        </a>
+                        </a> --}}
                     </label>
                     <input name="login_password" id="login_password" type="password" class="form-control">
                     @if (session('status_fail_password'))
@@ -41,21 +43,21 @@
                     @endif
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <div class="custom-checkbox custom-control">
                         <input type="checkbox" id="remember" class="custom-control-input">
                         <label for="remember" class="custom-control-label">Remember Me</label>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group m-0">
                     <button type="submit" class="btn btn-primary btn-block">
                         Login
                     </button>
                 </div>
-                <div class="mt-4 text-center">
+                {{-- <div class="mt-4 text-center">
                     Belum punya akun? <a href="{{ route('register') }}">Daftar sekarang!</a>
-                </div>
+                </div> --}}
             </form>
 
         </div>
