@@ -23,7 +23,9 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
 
     // Bulk Stamp Route
     Route::group(['prefix' => '/bulk-stamp'], function () {
-        Route::get('/', [BulkstampController::class, 'index'])->name('bulk-stamp');
+        Route::get('/upload-csv', [BulkstampController::class, 'upload_csv'])->name('upload-csv');
+        Route::get('/generate-snqr', [BulkstampController::class, 'generate_snqr'])->name('generate-snqr');
+        Route::get('/stamping', [BulkstampController::class, 'stamping'])->name('stamping');
     });
 });
 

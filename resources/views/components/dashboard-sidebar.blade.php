@@ -26,9 +26,9 @@
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{ route('dashboard') }}">Upload CSV</a></li>
-                        <li><a class="nav-link" href="{{ route('dashboard') }}">Generate SN-QR</a></li>
-                        <li><a class="nav-link" href="{{ route('dashboard') }}">Stamping</a></li>
+                        <li><a class="nav-link" href="{{ route('upload-csv') }}">Upload CSV</a></li>
+                        <li><a class="nav-link" href="{{ route('generate-snqr') }}">Generate SN-QR</a></li>
+                        <li><a class="nav-link" href="{{ route('stamping') }}">Stamping</a></li>
                     </ul>
                 </li>
             </ul>
