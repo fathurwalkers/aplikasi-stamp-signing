@@ -17,48 +17,35 @@
                     </a>
                 </li>
 
-                <li class="menu-header">Menu</li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-columns"></i>
-                        <span>
-                            Bulk Stamping
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="{{ route('dashboard') }}">Upload CSV</a></li>
-                        <li><a class="nav-link" href="{{ route('dashboard') }}">Generate SN-QR</a></li>
-                        <li><a class="nav-link" href="{{ route('dashboard') }}">Stamping</a></li>
-                    </ul>
-                </li>
+                <li class="menu-header">Bulk Stamping</li>
                 <li class="">
                     <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i>
                         <span>
-                            Users
+                            Stamping
                         </span>
                     </a>
                 </li>
                 <li class="">
                     <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i>
                         <span>
-                            Data Nasabah
+                            Genearate SN-QR
                         </span>
                     </a>
                 </li>
                 <li class="">
                     <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i>
                         <span>
-                            Cek Saldo
+                            Upload CSV
                         </span>
                     </a>
                 </li>
-                <li class="">
+                {{-- <li class="">
                     <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i>
                         <span>
                             System Configuration
                         </span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
 
         </aside>

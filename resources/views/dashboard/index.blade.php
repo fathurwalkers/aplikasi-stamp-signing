@@ -15,13 +15,13 @@
 
         <div class="row">
 
-            <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="col-sm-3 col-md-3 col-lg-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1">Saldo Materai</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">NULL</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $saldo }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-envelope text-warning"></i>
@@ -31,13 +31,13 @@
                 </div>
             </div>
 
-            {{-- <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="col-sm-3 col-md-3 col-lg-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1">Akun Pemungut</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">NULL</div>
+                                <div class="text-xs font-weight-bold text-uppercase mb-1">Total Signing</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">32</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-envelope text-info"></i>
@@ -45,8 +45,53 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
 
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-uppercase mb-1">Error Signing</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-envelope text-info"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-uppercase mb-1">Sukses Signing</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">28</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-envelope text-info"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h5 class="text-dark">Pembubuhan E-Materai</h5>
+                        <p>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
