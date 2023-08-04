@@ -86,9 +86,26 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <h5 class="text-dark">Pembubuhan E-Materai</h5>
-                        <p>
-                            
-                        </p>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="date">Tanggal Dokumen</label>
+                                    <input type="date" class="form-control" id="date">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="text">Nomor Dokumen</label>
+                                    <input type="number" class="form-control" id="text">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="text">Pilih Dokumen File</label>
+                                    <input type="file" class="form-control" id="text">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
