@@ -65,20 +65,17 @@ class BackController extends Controller
             return back()->with('status', 'Maaf username atau password yang anda masukkan salah!')->withInput();
         } elseif ($req_password !== $password) {
             return back()->with('status', 'Maaf username atau password yang anda masukkan salah!')->withInput();
+        } else {
+            $params = [
+                'user' => $username,
+                'password' => $password
+            ];
+            $response = $client->request('POST', $url, [
+                'json' => $params
+            ]);
+            $data = json_decode($response->getBody());
+            dd($data->token);
         }
-
-        $params = [
-            'user' => $username,
-            'password' => $password
-        ];
-
-        $response = $client->request('POST', $url, [
-            'json' => $params
-        ]);
-
-        $data = json_decode($response->getBody());
-
-        dd($data->token);
         die;
     }
 
