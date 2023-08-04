@@ -51,6 +51,29 @@ class BackController extends Controller
         return view('login');
     }
 
+    public function new_postlogin()
+    {
+        $client = new Client;
+
+        $url = 'https://backendservicedev.scm.perurica.co.id/api/users/login';
+        $username = 'ekokapitalsekuritas_emet@yopmail.com';
+        $password = 'Ekokapitalsek123!';
+
+        $params = [
+            'user' => $username,
+            'password' => $password
+        ];
+
+        $response = $client->request('POST', $url, [
+            'json' => $params
+        ]);
+
+        $data = json_decode($response->getBody());
+
+        dd($data->token);
+        die;
+    }
+
     public function register()
     {
         $users = session('data_login');
