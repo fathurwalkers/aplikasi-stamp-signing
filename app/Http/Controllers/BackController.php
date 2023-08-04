@@ -51,13 +51,15 @@ class BackController extends Controller
         return view('login');
     }
 
-    public function new_postlogin()
+    public function new_postlogin(Request $request)
     {
         $client = new Client;
-
         $url = 'https://backendservicedev.scm.perurica.co.id/api/users/login';
-        $username = 'ekokapitalsekuritas_emet@yopmail.com';
-        $password = 'Ekokapitalsek123!';
+
+        $req_username = $request->login_username;
+        $req_password = $request->login_password;
+        $username = env('API_LOGIN_USERNAME');
+        $password = env('API_LOGIN_PASSWORD');
 
         $params = [
             'user' => $username,

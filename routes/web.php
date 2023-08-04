@@ -9,7 +9,7 @@ use App\Http\Controllers\{
 // Route untuk Halaman Login
 Route::get('/login', [BackController::class, 'login'])->name('login');
 // Route untuk Proses permintaan Login ke Dashboard
-Route::post('/login/proses-login', [BackController::class, 'postlogin'])->name('post-login');
+Route::post('/login/proses-login', [BackController::class, 'new_postlogin'])->name('new-post-login');
 
 // Route untuk Halaman Register
 Route::get('/register', [BackController::class, 'register'])->name('register');
