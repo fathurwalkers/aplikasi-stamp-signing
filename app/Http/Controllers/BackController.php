@@ -61,6 +61,12 @@ class BackController extends Controller
         $username = env('API_LOGIN_USERNAME');
         $password = env('API_LOGIN_PASSWORD');
 
+        if ($req_username !== $username) {
+            return back()->with('status', 'Maaf username atau password yang anda masukkan salah!')->withInput();
+        } elseif ($req_password !== $password) {
+            return back()->with('status', 'Maaf username atau password yang anda masukkan salah!')->withInput();
+        }
+
         $params = [
             'user' => $username,
             'password' => $password
