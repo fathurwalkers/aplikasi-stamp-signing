@@ -31,13 +31,6 @@
                         <li><a class="nav-link" href="{{ route('dashboard') }}">Stamping</a></li>
                     </ul>
                 </li>
-                {{-- <li class="">
-                    <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i>
-                        <span>
-                            System Configuration
-                        </span>
-                    </a>
-                </li> --}}
             </ul>
 
         </aside>
