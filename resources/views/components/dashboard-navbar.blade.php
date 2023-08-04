@@ -7,13 +7,13 @@
                 </li>
             </ul>
         </form>
-        <h4 class="d-flex mr-auto my-auto text-white">SISTEM INFORMASI PENGADUAN</h4>
+        <h4 class="d-flex mr-auto my-auto text-white"></h4>
         <ul class="navbar-nav navbar-right">
             <li class="dropdown"><a href="#" data-toggle="dropdown"
                     class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                     <img alt="image" src="{{ asset('assets/stisla/assets') }}/img/avatar/avatar-1.png"
                         class="rounded-circle mr-1">
-                    <div class="d-sm-none d-lg-inline-block">{{ $users->login_nama }}</div>
+                    <div class="d-sm-none d-lg-inline-block">{{ $users['name'] }}</div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <form action="{{ route('logout') }}" method="POST">

@@ -18,27 +18,22 @@ class BackController extends Controller
 {
     public function index()
     {
+        $session_users = session('data_login');
+        $users = $session_users;
+
         $client = new Client;
+        $url = 'https://backendservicedev.scm.perurica.co.id/function/saldopos';
 
-        $url = 'https://backendservicedev.scm.perurica.co.id/api/users/login';
-        $username = 'ekokapitalsekuritas_emet@yopmail.com';
-        $password = 'Ekokapitalsek123!';
-
-        $params = [
-            'user' => $username,
-            'password' => $password
-        ];
-
-        $response = $client->request('POST', $url, [
-            'json' => $params
+        $response = $client->request('GET', $url, [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $users["token"],
+                'Content-Type' => 'application/json'
+            ]
         ]);
-
         $data = json_decode($response->getBody());
-
-        dd($data->token);
-        die;
+        dd($data);
         return view('dashboard.index', [
-            'response' => $response
+            'users' => $users
         ]);
     }
 
@@ -55,12 +50,10 @@ class BackController extends Controller
     {
         $client = new Client;
         $url = 'https://backendservicedev.scm.perurica.co.id/api/users/login';
-
         $req_username = $request->login_username;
         $req_password = $request->login_password;
         $username = env('API_LOGIN_USERNAME');
         $password = env('API_LOGIN_PASSWORD');
-
         if ($req_username !== $username) {
             return back()->with('status', 'Maaf username atau password yang anda masukkan salah!')->withInput();
         } elseif ($req_password !== $password) {
@@ -74,7 +67,16 @@ class BackController extends Controller
                 'json' => $params
             ]);
             $data = json_decode($response->getBody());
-            dd($data->token);
+            $token = $data->token;
+            $firstName = $data->result->data->login->user->firstName;
+            $lastName = $data->result->data->login->user->lastName;
+            $name = $firstName . " " . $lastName;
+            $data_login = [
+                'name' => $name,
+                'token' => $token
+            ];
+            $users = session(['data_login' => $data_login]);
+            return redirect()->route('dashboard')->with('status', 'Berhasil Login!');
         }
         die;
     }
