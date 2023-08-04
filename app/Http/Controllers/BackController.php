@@ -31,9 +31,10 @@ class BackController extends Controller
             ]
         ]);
         $data = json_decode($response->getBody());
-        dd($data);
+        $saldopost = $data->result->saldo;
         return view('dashboard.index', [
-            'users' => $users
+            'users' => $users,
+            'saldo' => $saldopost,
         ]);
     }
 
